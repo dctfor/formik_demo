@@ -36,6 +36,10 @@ function App() {
     setEditingPatient({ ...patients[index], index });
   };
 
+  const cancelEdit = () => {
+    setEditingPatient(null);
+  };
+
   return (
     <div className="container mt-5">
       <h1>Patient Form</h1>
@@ -43,6 +47,7 @@ function App() {
         addPatient={addPatient}
         updatePatient={updatePatient}
         editingPatient={editingPatient}
+        cancelEdit={cancelEdit}
       />
       <h2 className="mt-5">Patient List</h2>
       <ul className="list-group">

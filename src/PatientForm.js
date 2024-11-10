@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-function PatientForm({ addPatient, updatePatient, editingPatient }) {
+function PatientForm({ addPatient, updatePatient, editingPatient, cancelEdit }) {
   const [initialValues, setInitialValues] = useState({ name: '', email: '', age: '', address: '' });
 
   useEffect(() => {
@@ -45,13 +45,13 @@ function PatientForm({ addPatient, updatePatient, editingPatient }) {
           } else {
             addPatient(values);
           }
-          alert('Form data saved to localStorage');
+        //   alert('Form data saved to localStorage');
           setSubmitting(false);
           resetForm();
         }, 400);
       }}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, resetForm }) => (
         <Form>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
@@ -73,9 +73,23 @@ function PatientForm({ addPatient, updatePatient, editingPatient }) {
             <Field type="text" name="address" className="form-control" />
             <ErrorMessage name="address" component="div" className="text-danger" />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-            {editingPatient ? 'Update' : 'Submit'}
-          </button>
+          <div className="d-flex">
+            <button type="submit" className="btn btn-primary me-2" disabled={isSubmitting}>
+              {editingPatient ? 'Update' : 'Submit'}
+            </button>
+            {editingPatient && (
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => {
+                  resetForm();
+                  cancelEdit();
+                }}
+              >
+                Cancel
+              </button>
+            )}
+          </div>
         </Form>
       )}
     </Formik>
