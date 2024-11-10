@@ -45,7 +45,6 @@ function PatientForm({ addPatient, updatePatient, editingPatient, cancelEdit }) 
           } else {
             addPatient(values);
           }
-        //   alert('Form data saved to localStorage');
           setSubmitting(false);
           resetForm();
         }, 400);
@@ -73,22 +72,31 @@ function PatientForm({ addPatient, updatePatient, editingPatient, cancelEdit }) 
             <Field type="text" name="address" className="form-control" />
             <ErrorMessage name="address" component="div" className="text-danger" />
           </div>
-          <div className="d-flex">
-            <button type="submit" className="btn btn-primary me-2" disabled={isSubmitting}>
+          <div className="d-flex justify-content-between">
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
               {editingPatient ? 'Update' : 'Submit'}
             </button>
-            {editingPatient && (
+            <div>
               <button
                 type="button"
-                className="btn btn-secondary"
-                onClick={() => {
-                  resetForm();
-                  cancelEdit();
-                }}
+                className="btn btn-secondary me-2"
+                onClick={() => resetForm()}
               >
-                Cancel
+                Clear
               </button>
-            )}
+              {editingPatient && (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    resetForm();
+                    cancelEdit();
+                  }}
+                >
+                  Cancel
+                </button>
+              )}
+            </div>
           </div>
         </Form>
       )}
