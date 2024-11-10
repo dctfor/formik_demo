@@ -77,13 +77,15 @@ function PatientForm({ addPatient, updatePatient, editingPatient, cancelEdit }) 
               {editingPatient ? 'Update' : 'Submit'}
             </button>
             <div>
-              <button
-                type="button"
-                className="btn btn-secondary me-2"
-                onClick={() => resetForm()}
-              >
-                Clear
-              </button>
+              {!editingPatient && (
+                <button
+                  type="button"
+                  className="btn btn-secondary me-2"
+                  onClick={() => resetForm()}
+                >
+                  Clear
+                </button>
+              )}
               {editingPatient && (
                 <button
                   type="button"
