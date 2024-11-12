@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Formik Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React application that demonstrates the use of Formik for form handling and validation. The application allows users to add, edit, and delete patient information, which includes name, email, age, and address. The patient data is stored in the browser's local storage. The basic usage is in the PatientForm.js File
 
-## Available Scripts
+## What is Formik?
 
-In the project directory, you can run:
+Formik is a popular open-source library for building and managing forms in React applications. It simplifies form handling by providing a set of tools and components that help manage form state, validation, and submission. Formik aims to reduce the complexity of form management in React by offering a declarative approach to form creation and validation, making it easier to build robust and maintainable forms.
 
-### `npm start`
+Key features of Formik include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Easy form state management
+- Built-in validation and error handling
+- Integration with Yup for schema-based validation
+- Support for custom form components
+- Simplified form submission handling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Formik is widely used in the React community due to its flexibility and ease of use, making it a go-to solution for form management in React applications.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Instructions
 
-### `npm run build`
+To set up the project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/your-username/formik_demo.git
+    cd formik_demo
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**:
+    ```sh
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the development server**:
+    ```sh
+    npm start
+    ```
 
-### `npm run eject`
+4. **Open the application**:
+    Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **Run tests**:
+    To run the tests, use the following command:
+    ```sh
+    npm test
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. **Build the project**:
+    To create a production build, use the following command:
+    ```sh
+    npm run build
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These steps will help you get the project up and running on your local machine.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+- Add new patients
+- Edit existing patients
+- Delete patients
+- Form validation using Formik
+- Persistent storage using local storage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- Formik
+- Bootstrap
+- React-Bootstrap
+- Local Storage
 
-### Code Splitting
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+/c:/proyectos/formik_demo/
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── PatientForm.js
+│   │   └── PatientList.js
+│   ├── utils/
+│   │   └── localStorage.js
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+### File Descriptions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **public/**: Contains static files such as the HTML template and icons.
+- **src/**: Contains the source code of the application.
+    - **components/**: Contains React components.
+        - **PatientForm.js**: Form component for adding and editing patient information.
+        - **PatientList.js**: Component for displaying the list of patients.
+    - **utils/**: Contains utility functions.
+        - **localStorage.js**: Functions for interacting with the browser's local storage.
+    - **App.css**: CSS file for styling the App component.
+    - **App.js**: Main component that sets up the application.
+    - **App.test.js**: Test file for the App component.
+    - **index.css**: Global CSS file.
+    - **index.js**: Entry point of the application.
+    - **reportWebVitals.js**: File for measuring performance.
+    - **setupTests.js**: Configuration file for setting up tests.
+- **.gitignore**: Specifies files to be ignored by Git.
+- **package.json**: Contains project metadata and dependencies.
+- **README.md**: Project documentation.
